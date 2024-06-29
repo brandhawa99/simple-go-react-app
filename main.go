@@ -1,9 +1,16 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+
+	"github.com/gofiber/fiber"
+	"github.com/gofiber/fiber/v2/log"
+)
 
 func main() {
-	app := http.NewServeMux()
+	fmt.Println("Hello World")
 
-	return
+	app := fiber.New()
+
+	log.Fatal(app.Listen(":4000"))
 }
