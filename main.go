@@ -41,5 +41,14 @@ func main() {
 
 	})
 
+	app.Put("/api/todos/:id", func(c *fiber.Ctx) error {
+		id := c.Params("id")
+
+		for i, todo := range todos {
+			if fmt.Sprint(todo.ID) == id {
+				todos[i].Completed = true
+			}
+		}
+	})
 	log.Fatal(app.Listen(":4000"))
 }
