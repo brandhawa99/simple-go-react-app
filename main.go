@@ -69,5 +69,6 @@ func main() {
 }
 
 func remove(slice []Todo, s int) []Todo {
+	// start from every item up to index s then everything after s (s+1)
 	return append(slice[:s], slice[s+1:]...)
 }
