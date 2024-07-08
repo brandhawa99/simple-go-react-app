@@ -59,8 +59,7 @@ func main() {
 		for i, todo := range todos {
 			if fmt.Sprint(todo.ID) == id {
 				todos = remove(todos, i)
-				msg := fmt.Sprint("Todo ", todo.ID, " Deleted")
-				return c.Status(200).JSON(fiber.Map{"msg": msg})
+				return c.Status(200).JSON(fiber.Map{"success": true})
 
 			}
 		}
